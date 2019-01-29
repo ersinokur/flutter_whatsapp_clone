@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:whatsapp_cone/screens/call_screen.dart';
+import 'package:whatsapp_cone/screens/chat_screen.dart';
+import 'package:whatsapp_cone/screens/status_screen.dart';
 
 class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
@@ -43,9 +45,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           controller: _tabController,
           children: <Widget>[
             Text("Kamera"),
-            Text("Sohbet"),
-            Text("Durum"),
-            Text("Arama"),
+           ChatScreen(),
+           StatusScreen(),
+           CallScreen(),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -54,7 +56,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             Icons.message,
             color: Colors.white,
           ),
-          onPressed: ()=>print("sohbet ekranı"),
+          onPressed: () => print("sohbet ekranı"),
         ));
   }
+
+ 
 }
